@@ -1,0 +1,19 @@
+dist: trusty
+sudo: false
+
+language: php
+php:
+- '7.1'
+- '7.2'
+
+env: YII_ENV="test"
+notifications:
+  email: false
+
+install:
+- composer config --global github-oauth.github.com $GITHUB_ACCESS_TOKEN
+- composer global require "fxp/composer-asset-plugin"
+- composer install --no-interaction
+
+script: composer test
+after_success: composer coverage

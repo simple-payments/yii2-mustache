@@ -1,0 +1,8 @@
+/.*/
+/doc/api/
+/var/
+/vendor/
+
+/*.iml
+/**/.DS_Store
+/composer.lock
